@@ -1,13 +1,14 @@
 public abstract class Pokemon {
-    private String nome, tipo;
-    private int puntiSalute, puntiAttacco, puntiDifesa;
+    protected String nome, tipo;
+    protected int puntiSalute, puntiAttacco, puntiDifesa, SaluteMax;
 
-    public Pokemon(String nome, String tipo, int puntiSalute, int puntiAttacco, int puntiDifesa) {
+    public Pokemon(String nome, String tipo, int puntiSalute, int puntiAttacco, int puntiDifesa, int SaluteMax) {
         this.nome = nome;
         this.tipo = tipo;
         this.puntiSalute = puntiSalute;
         this.puntiAttacco = puntiAttacco;
         this.puntiDifesa = puntiDifesa;
+        this.SaluteMax = SaluteMax;
     }
 
     public abstract void attaca(Pokemon avversario);
@@ -24,8 +25,5 @@ public abstract class Pokemon {
     public void visualizzaStato() {
 
         System.out.println(nome + "(" +tipo + ")" + ":\n" + "Salute: " + puntiSalute + "\nAttacco: " + puntiAttacco + "\nDifesa: " + puntiDifesa);
-    }
-    
-
-    
+    }  
 }
