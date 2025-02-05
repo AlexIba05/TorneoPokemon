@@ -1,9 +1,9 @@
 public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale{
     int vittorie= 0;
     boolean evoluto= false;
-    
-    public Pikachu(String nome, String tipo, int puntiSalute, int puntiAttacco, int puntiDifesa, int SaluteMax) {
-            super(nome, tipo, puntiSalute, puntiAttacco, puntiDifesa, SaluteMax);
+
+    public Pikachu() {
+            super("Pikachu", "Elettro", 35, 25, 15, 35);
             //TODO Auto-generated constructor stub
         }
     
