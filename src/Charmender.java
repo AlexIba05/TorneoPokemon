@@ -61,7 +61,7 @@ public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale
 
     @Override
     public void update() {
-        if (App.turno > turnoVolo+1) {
+        if (App.turno > turnoVolo+1 && volo) {
             volo = false;
             System.out.println(nome + " è sceso e riprende a combattere");
         }
