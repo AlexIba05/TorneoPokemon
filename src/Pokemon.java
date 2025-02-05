@@ -27,7 +27,12 @@ public abstract class Pokemon {
     public void visualizzaStato() {
 
         System.out.println(nome + "(" +tipo + ")" + ":\n" + "Salute: " + puntiSalute + "\nAttacco: " + puntiAttacco + "\nDifesa: " + puntiDifesa);
-    }  
+    }
+    
+    public boolean IsAlive() {
+
+        return puntiSalute > 0;
+    }
 
     public abstract void update();
 }
