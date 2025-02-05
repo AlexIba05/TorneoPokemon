@@ -28,4 +28,6 @@ public abstract class Pokemon {
 
         System.out.println(nome + "(" +tipo + ")" + ":\n" + "Salute: " + puntiSalute + "\nAttacco: " + puntiAttacco + "\nDifesa: " + puntiDifesa);
     }  
+
+    public abstract void update();
 }

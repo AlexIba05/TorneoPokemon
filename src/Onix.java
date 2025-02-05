@@ -1,6 +1,10 @@
+import java.util.Random;
+
 public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale{
+    Random r= new Random();
     int AttCorazzato, DifCorazzato;
     boolean corazzato=false;
+    
     public Onix() {
             super("Onix", "Roccia", 40, 15, 30, 40);
         }
@@ -28,10 +32,18 @@ public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale{
     @Override
     public void attaca(Pokemon avversario) {
         int danno;
+        int ProbAttSpc = r.nextInt(100)+1;
+        if (ProbAttSpc < 40) {eseguiMossaSPC(avversario); return;}
         danno = this.puntiAttacco - avversario.puntiDifesa;
        if(danno < 0) {danno = 1;}
        avversario.subisciDanno(danno);
        System.out.println(nome + " attacca " + avversario.nome + " causando " + danno + " danni");
+    }
+
+    @Override
+    public void update() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'update'");
     }
 
 }
