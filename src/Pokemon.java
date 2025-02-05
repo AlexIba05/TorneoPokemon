@@ -19,7 +19,9 @@ public abstract class Pokemon {
 
         if (this.puntiSalute < 0) {
             this.puntiSalute= 0;
+            System.out.println("Pokemon non ha più energie e si ritira");
         }
+        else System.out.println(nome + " subisce " + danno + " punti di danno");
     }
 
     public void visualizzaStato() {
