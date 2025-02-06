@@ -1,3 +1,7 @@
+package com.github.alexIba05.torneopokemon.pokemon;
+
+import com.github.alexIba05.torneopokemon.App;
+
 import java.util.Random;
 
 public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale {
@@ -6,7 +10,7 @@ public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale {
     boolean corazzato = false;
 
     public Onix() {
-        super("Onix", "Roccia", 40, 15, 30, 40);
+        super("com.github.alexIba05.torneopokemon.pokemon.Onix", "Roccia", 40, 15, 30, 40);
     }
 
     @Override

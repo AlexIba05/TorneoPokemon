@@ -7,16 +7,16 @@ Classe Pokémon (astratta) Attributi: - nome (String) - tipo (String) indica la 
 Metodi: - attacca(Pokémon avversario) (astratto): diminuisce la salute del Pokémon avversario, in base alla tipologia di Pokémon. La formula di calcolo del danno dipende dalla combinazione Pokémon/avversario (ad esempio se un Pokémon di tipo "Fuoco" attacca un Pokémon di tipo "Erba" il danno aumenta del 25%) - subisciDanno(int danno): la salute diminuisce del valore indicato - visualizzaStato(): mostra le informazioni sul Pokémon (nome, salute, ecc.)
 
 Interfacce da realizzare:
-IEvolvibile: Metodi: - evolvi(): permette al Pokémon di evolversi (cambia il nome, punti attacco, difesa, salute). Per evolversi un Pokémon deve ottenere almeno 3 vittorie
+com.github.alexIba05.torneopokemon.pokemon.IEvolvibile: Metodi: - evolvi(): permette al Pokémon di evolversi (cambia il nome, punti attacco, difesa, salute). Per evolversi un Pokémon deve ottenere almeno 3 vittorie
 
-IAttaccoSpeciale: Metodi: - eseguiMossaSpeciale(Pokémon avversario): simile all'attacco, ma causa danni maggiori
+com.github.alexIba05.torneopokemon.pokemon.IAttaccoSpeciale: Metodi: - eseguiMossaSpeciale(Pokémon avversario): simile all'attacco, ma causa danni maggiori
 
-IVolante: Metodi: - vola(): per il turno successivo l'avversario non può attaccare
+com.github.alexIba05.torneopokemon.pokemon.IVolante: Metodi: - vola(): per il turno successivo l'avversario non può attaccare
 
-ICorazzato: Metodi: - attivaCorazza(): per il turno successivo aumenta la sua difesa e diminuisce il suo attacco
+com.github.alexIba05.torneopokemon.pokemon.ICorazzato: Metodi: - attivaCorazza(): per il turno successivo aumenta la sua difesa e diminuisce il suo attacco
 
 Classi concrete: per ogni Pokémon realizzare una classe che eredita dalla classe astratta e implementa una o più interfacce
-Esempio: - Pikachu (eredita da Pokémon, implementa IEvolvibile, IAttaccoSpeciale) - Charizard (eredita da Pokémon, implementa IEvolvibile, IAttaccoSpeciale, IVolante)
+Esempio: - com.github.alexIba05.torneopokemon.pokemon.Pikachu (eredita da Pokémon, implementa com.github.alexIba05.torneopokemon.pokemon.IEvolvibile, com.github.alexIba05.torneopokemon.pokemon.IAttaccoSpeciale) - Charizard (eredita da Pokémon, implementa com.github.alexIba05.torneopokemon.pokemon.IEvolvibile, com.github.alexIba05.torneopokemon.pokemon.IAttaccoSpeciale, com.github.alexIba05.torneopokemon.pokemon.IVolante)
 
 Classe Main:
 - simulare una battaglia tra due allenatori. Ogni allenatore ha a disposizione 2 Pokémon, di cui ne può schierare solo 1 alla volta.

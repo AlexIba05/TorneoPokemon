@@ -1,11 +1,17 @@
+package com.github.alexIba05.torneopokemon;
+
+import com.github.alexIba05.torneopokemon.pokemon.Charmender;
+import com.github.alexIba05.torneopokemon.pokemon.Onix;
+import com.github.alexIba05.torneopokemon.pokemon.Pikachu;
+import com.github.alexIba05.torneopokemon.pokemon.Pokemon;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class App {
     public static int turno = 0;
 
-    public static void main(String[] args) throws Exception {
-
+    public static void main(String[] args) {
         List<Pokemon> red = new ArrayList<>();
         List<Pokemon> blue = new ArrayList<>();
 
@@ -31,7 +37,6 @@ public class App {
                 if (redp == null) {
                     System.out.println("Ha vinto il blu");
                 } else System.out.println("Ha vinto il rosso");
-
                 break;
             }
 
@@ -41,14 +46,6 @@ public class App {
             if (blup.isAlive())
                 blup.attaca(redp);
             else System.out.println("Salta turno, pokemon esausto. sceglierà il prossimo");
-
-            if (redp instanceof IEvolvibile pev) {
-                System.out.println(pev.getVittorie());
-            }
-
-            if (blup instanceof IEvolvibile pev) {
-                System.out.println(pev.getVittorie());
-            }
 
             System.out.println();
         }
@@ -63,7 +60,6 @@ public class App {
         for (Pokemon pokemon : allenatore) {
             if (pokemon.isAlive()) return pokemon;
         }
-
         return null;
     }
 }

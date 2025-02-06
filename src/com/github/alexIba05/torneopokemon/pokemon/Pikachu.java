@@ -1,3 +1,5 @@
+package com.github.alexIba05.torneopokemon.pokemon;
+
 import java.util.Random;
 
 public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
@@ -6,7 +8,7 @@ public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
     boolean evoluto = false;
 
     public Pikachu() {
-        super("Pikachu", "Elettro", 20, 25, 10, 20);
+        super("com.github.alexIba05.torneopokemon.pokemon.Pikachu", "Elettro", 20, 25, 10, 20);
     }
 
     @Override

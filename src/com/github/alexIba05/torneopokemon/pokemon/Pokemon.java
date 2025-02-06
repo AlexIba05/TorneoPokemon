@@ -1,3 +1,5 @@
+package com.github.alexIba05.torneopokemon.pokemon;
+
 public abstract class Pokemon {
     protected String nome, tipo;
     protected int puntiSalute, puntiAttacco, puntiDifesa, SaluteMax;
