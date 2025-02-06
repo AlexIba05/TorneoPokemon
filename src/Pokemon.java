@@ -17,7 +17,7 @@ public abstract class Pokemon {
 
         this.puntiSalute -= danno;
 
-        if (this.puntiSalute < 0) {
+        if (this.puntiSalute <= 0) {
             this.puntiSalute = 0;
             System.out.println(nome + " non ha più energie e si ritira");
         } else System.out.println(nome + " subisce " + danno + " punti di danno");

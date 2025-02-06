@@ -6,7 +6,7 @@ public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
     boolean evoluto = false;
 
     public Pikachu() {
-        super("Pikachu", "Elettro", 35, 25, 15, 35);
+        super("Pikachu", "Elettro", 20, 25, 10, 20);
     }
 
     @Override

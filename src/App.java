@@ -25,7 +25,13 @@ public class App {
             Pokemon redp = getFirstAlive(red);
             Pokemon blup = getFirstAlive(blue);
 
-            if (redp == null || blup == null) break;
+            if (redp == null || blup == null) {
+                if (redp == null) {
+                    System.out.println("Ha vinto il blu");
+                } else System.out.println("Ha vinto il rosso");
+
+                break;
+            }
 
             System.out.println("Turno Red");
             redp.attaca(blup);
