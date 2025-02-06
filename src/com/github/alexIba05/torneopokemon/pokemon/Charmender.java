@@ -4,19 +4,18 @@ import com.github.alexIba05.torneopokemon.*;
 
 import java.util.Random;
 
-//TODO incremento vittorie
 public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale, IVolante {
     Random r = new Random();
     int vittorie = 2, turnoVolo = -1;
     boolean evoluto = false, volo = false;
 
     public Charmender() {
-        super("com.github.alexIba05.torneopokemon.pokemon.Charmender", "fuoco", 30, 20, 15, 30);
+        super("Charmender", "fuoco", 30, 20, 15, 30);
     }
 
     @Override
     public void vola() {
-        if (!nome.equalsIgnoreCase("com.github.alexIba05.torneopokemon.pokemon.Charmender") && !volo) {
+        if (!nome.equalsIgnoreCase("Charmender") && !volo) {
             volo = true;
             turnoVolo = App.turno;
             System.out.println(nome + "sta volando e quindi non subirà alcun danno");
@@ -67,7 +66,7 @@ public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale
             return;
         }
         int ProbVoloSpc = r.nextInt(100) + 1;
-        if (ProbVoloSpc < 20 && !nome.equalsIgnoreCase("com.github.alexIba05.torneopokemon.pokemon.Charmender")) {
+        if (ProbVoloSpc < 20 && !nome.equalsIgnoreCase("Charmender")) {
             vola();
             return;
         }

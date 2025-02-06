@@ -10,7 +10,7 @@ public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale {
     boolean corazzato = false;
 
     public Onix() {
-        super("com.github.alexIba05.torneopokemon.pokemon.Onix", "Roccia", 40, 15, 30, 40);
+        super("Onix", "Roccia", 40, 15, 30, 40);
     }
 
     @Override
