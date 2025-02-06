@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
     Random r = new Random();
-    int vittorie = 0;
+    int vittorie = 2;
     boolean evoluto = false;
 
     public Pikachu() {
@@ -16,19 +16,26 @@ public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
             danno = 1;
         }
         avversario.subisciDanno(danno);
+        if (!avversario.isAlive()) vittorie++;
         System.out.println(nome + " usa attacco speciale su " + avversario.nome + " causando " + danno + " danni");
     }
 
     @Override
     public void evolvi() {
         if (vittorie >= 3 && !evoluto) {
-            this.nome = "Raichu";
+            evoluto = true;
             this.puntiAttacco += 20;
             this.puntiDifesa += 10;
             this.SaluteMax += 30;
             puntiSalute = SaluteMax;
-            System.out.println("Pikachu si è evoluto");
+            System.out.println(nome + " si è evoluto");
+            this.nome = "Raichu";
         }
+    }
+
+    @Override
+    public int getVittorie() {
+        return vittorie;
     }
 
     @Override
@@ -43,11 +50,14 @@ public class Pikachu extends Pokemon implements IEvolvibile, IAttaccoSpeciale {
             danno = 1;
         }
         avversario.subisciDanno(danno);
+        if (!avversario.isAlive()) vittorie++;
         System.out.println(nome + " attacca " + avversario.nome + " causando " + danno + " danni");
     }
 
     @Override
     public void update() {
+        if (!isAlive()) return;
+        evolvi();
     }
 
 }

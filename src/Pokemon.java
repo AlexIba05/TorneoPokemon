@@ -33,5 +33,13 @@ public abstract class Pokemon {
         return puntiSalute > 0;
     }
 
+    public int getPuntiSalute() {
+        return puntiSalute;
+    }
+
+    public void setPuntiSalute(int puntiSalute) {
+        this.puntiSalute = puntiSalute;
+    }
+
     public abstract void update();
 }

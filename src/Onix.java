@@ -50,6 +50,7 @@ public class Onix extends Pokemon implements ICorazzato, IAttaccoSpeciale {
 
     @Override
     public void update() {
+        if (!isAlive()) return;
         if (App.turno > turnoCorazzato + 1 && corazzato) {
             corazzato = false;
             puntiAttacco = AttCorazzato;

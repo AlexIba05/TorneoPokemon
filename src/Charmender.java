@@ -3,7 +3,7 @@ import java.util.Random;
 //TODO incremento vittorie
 public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale, IVolante {
     Random r = new Random();
-    int vittorie = 0, turnoVolo = -1;
+    int vittorie = 2, turnoVolo = -1;
     boolean evoluto = false, volo = false;
 
     public Charmender() {
@@ -31,19 +31,26 @@ public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale
             danno = 1;
         }
         avversario.subisciDanno(danno);
+        if (!avversario.isAlive()) vittorie++;
         System.out.println(nome + " usa attacco speciale su " + avversario.nome + " causando " + danno + " danni");
     }
 
     @Override
     public void evolvi() {
         if (vittorie >= 3 && !evoluto) {
-            this.nome = "Charmeleon";
+            evoluto = true;
             this.puntiAttacco += 20;
             this.puntiDifesa += 10;
             this.SaluteMax += 30;
             puntiSalute = SaluteMax;
-            System.out.println("Charmender  si è evoluto");
+            System.out.println(nome + " si è evoluto");
+            this.nome = "Charmeleon";
         }
+    }
+
+    @Override
+    public int getVittorie() {
+        return vittorie;
     }
 
     @Override
@@ -65,11 +72,14 @@ public class Charmender extends Pokemon implements IEvolvibile, IAttaccoSpeciale
             danno = 1;
         }
         avversario.subisciDanno(danno);
+        if (!avversario.isAlive()) vittorie++;
         System.out.println(nome + " attacca " + avversario.nome + " causando " + danno + " danni");
     }
 
     @Override
     public void update() {
+        if (!isAlive()) return;
+        evolvi();
         if (App.turno > turnoVolo + 1 && volo) {
             volo = false;
             System.out.println(nome + " è sceso e riprende a combattere");

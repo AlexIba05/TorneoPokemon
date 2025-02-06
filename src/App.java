@@ -9,8 +9,8 @@ public class App {
         List<Pokemon> red = new ArrayList<>();
         List<Pokemon> blue = new ArrayList<>();
 
-        red.add(new Pikachu());
         red.add(new Charmender());
+        red.add(new Pikachu());
 
         blue.add(new Pikachu());
         blue.add(new Onix());
@@ -18,7 +18,9 @@ public class App {
         System.out.println("Comincia la battaglia!!!");
         System.out.println("Scendono in campo i nostri sfidanti: ");
 
-        for (;;) {
+        while (true) {
+            updateAllPokemon(red, blue);
+
             turno++;
             System.out.println("Inzio del turno: " + turno);
 
@@ -40,8 +42,21 @@ public class App {
                 blup.attaca(redp);
             else System.out.println("Salta turno, pokemon esausto. sceglierà il prossimo");
 
+            if (redp instanceof IEvolvibile pev) {
+                System.out.println(pev.getVittorie());
+            }
+
+            if (blup instanceof IEvolvibile pev) {
+                System.out.println(pev.getVittorie());
+            }
+
             System.out.println();
         }
+    }
+
+    public static void updateAllPokemon(List<Pokemon> red, List<Pokemon> blu) {
+        red.forEach(Pokemon::update);
+        blu.forEach(Pokemon::update);
     }
 
     public static Pokemon getFirstAlive(List<Pokemon> allenatore) {
