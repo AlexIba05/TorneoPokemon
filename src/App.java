@@ -2,47 +2,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class App {
-    public static int turno= 0;
+    public static int turno = 0;
+
     public static void main(String[] args) throws Exception {
-      
-        List<Pokemon> Red = new ArrayList<>();
-        List<Pokemon> Blue = new ArrayList<>();
 
-        Red.add(new Pikachu());
-        Red.add(new Charmender());
+        List<Pokemon> red = new ArrayList<>();
+        List<Pokemon> blue = new ArrayList<>();
 
-        Blue.add(new Pikachu());
-        Blue.add(new Onix());
+        red.add(new Pikachu());
+        red.add(new Charmender());
+
+        blue.add(new Pikachu());
+        blue.add(new Onix());
 
         System.out.println("Comincia la battaglia!!!");
-        System.out.println("Scendono in campo i nostri sfidanti: " );
+        System.out.println("Scendono in campo i nostri sfidanti: ");
 
-        while(continua(Red, Blue)) {
+        for (;;) {
             turno++;
             System.out.println("Inzio del turno: " + turno);
-            System.out.println("");
 
+            Pokemon redp = getFirstAlive(red);
+            Pokemon blup = getFirstAlive(blue);
+
+            if (redp == null || blup == null) break;
+
+            System.out.println("Turno Red");
+            redp.attaca(blup);
+            System.out.println("Turno Blue");
+            if (blup.isAlive())
+                blup.attaca(redp);
+            else System.out.println("Salta turno, pokemon esausto. sceglierà il prossimo");
+
+            System.out.println();
         }
-
-
-
     }
 
-    public static boolean continua(List<Pokemon> Red, List<Pokemon> Blue) {
-        boolean Alldie= true;
-       for (Pokemon r : Red) {
-            if (r.IsAlive()) {
-                Alldie= false;
-                break;
-            }
-       }
-       boolean Alldie2= true;
-       for (Pokemon b : Blue) {
-        if (b.IsAlive()) {
-            Alldie2= false;
-            break;
+    public static Pokemon getFirstAlive(List<Pokemon> allenatore) {
+        for (Pokemon pokemon : allenatore) {
+            if (pokemon.isAlive()) return pokemon;
         }
-   }
-        return !(Alldie || Alldie2);
+
+        return null;
     }
 }

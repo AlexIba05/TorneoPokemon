@@ -18,18 +18,17 @@ public abstract class Pokemon {
         this.puntiSalute -= danno;
 
         if (this.puntiSalute < 0) {
-            this.puntiSalute= 0;
-            System.out.println("Pokemon non ha più energie e si ritira");
-        }
-        else System.out.println(nome + " subisce " + danno + " punti di danno");
+            this.puntiSalute = 0;
+            System.out.println(nome + " non ha più energie e si ritira");
+        } else System.out.println(nome + " subisce " + danno + " punti di danno");
     }
 
     public void visualizzaStato() {
 
-        System.out.println(nome + "(" +tipo + ")" + ":\n" + "Salute: " + puntiSalute + "\nAttacco: " + puntiAttacco + "\nDifesa: " + puntiDifesa);
+        System.out.println(nome + "(" + tipo + ")" + ":\n" + "Salute: " + puntiSalute + "\nAttacco: " + puntiAttacco + "\nDifesa: " + puntiDifesa);
     }
-    
-    public boolean IsAlive() {
+
+    public boolean isAlive() {
 
         return puntiSalute > 0;
     }
